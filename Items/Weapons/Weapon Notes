@@ -1,0 +1,3 @@
+// Weapons will go in this folder meaning that if you move a weapon you will want to fix your namespace to the following:
+
+<ModName>.Items.Weapons
