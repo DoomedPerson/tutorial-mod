@@ -1,0 +1,15 @@
+When creating Armour you need to make sure you have the correct images.
+
+Headwear
+<ItemName>.png
+<ItemName>_Head.png
+
+Body
+<ItemName>.png
+<ItemName>_Body.png
+<ItemName>_Arms.png
+<ItemName>_FemaleBody.png
+
+Legs
+<ItemName>.png
+<ItemName>_Legs.png
