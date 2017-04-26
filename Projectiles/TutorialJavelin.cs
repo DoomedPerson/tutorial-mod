@@ -138,7 +138,7 @@ namespace TutorialMod.Projectiles
                     float velYmult = 0.35f;
                     projectile.ai[1] = maxTicks;
                     projectile.velocity.X = projectile.velocity.X * velXmult;
-                    projectile.velocity.Y = projectile.velocity.Y * velYmult;
+                    projectile.velocity.Y = projectile.velocity.Y + velYmult; // This line was wrong in the past. If you are using the tutorial and didn't read the description, change this line.
                 }
 
                 projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(90f);
