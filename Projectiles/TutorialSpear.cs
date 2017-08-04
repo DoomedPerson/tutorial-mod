@@ -8,10 +8,12 @@ namespace TutorialMod.Projectiles
 {
     public class TutorialSpear : ModProjectile
     {
-
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Projectile Tutorial Spear");
+        }
         public override void SetDefaults()
         {
-            projectile.name = "Projectile Tutorial Spear";
             projectile.width = 18;
             projectile.height = 18;
             projectile.aiStyle = 19; // Spears use this AI Style.

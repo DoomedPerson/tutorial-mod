@@ -6,9 +6,13 @@ namespace TutorialMod.Projectiles
 {
     public class TutorialYoYo : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Projectile Tutorial YoYo");
+        }
+
         public override void SetDefaults()
         {
-            projectile.name = "Projectile Tutorial YoYo";
             projectile.width = 16;
             projectile.height = 16;
             projectile.aiStyle = 99; // All Yoyos use the style 99.

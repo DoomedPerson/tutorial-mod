@@ -8,9 +8,13 @@ namespace TutorialMod.Projectiles
 {
     public class TutorialJavelin : ModProjectile
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Javelin Projectile");
+        }
+
         public override void SetDefaults()
         {
-            projectile.name = "Tutorial Javelin Projectile";
             projectile.width = 16;
             projectile.height = 16;
             projectile.aiStyle = -1;
@@ -18,13 +22,16 @@ namespace TutorialMod.Projectiles
             projectile.melee = true;
             projectile.penetrate = 3;
         }
-
+        /*
         public override void TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
         {
             width = 10;
             height = 10;
             fallThrough = true;
         }
+        */
+
+        
 
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
@@ -51,7 +58,7 @@ namespace TutorialMod.Projectiles
 
             if(Main.netMode == 1 && item >= 0)
             {
-                NetMessage.SendData(Terraria.ID.MessageID.SyncItem, -1, -1, "", item, 1f, 0f, 0f, 0, 0, 0);
+                NetMessage.SendData(MessageID.KillProjectile);
             }
         }
 
@@ -138,7 +145,7 @@ namespace TutorialMod.Projectiles
                     float velYmult = 0.35f;
                     projectile.ai[1] = maxTicks;
                     projectile.velocity.X = projectile.velocity.X * velXmult;
-                    projectile.velocity.Y = projectile.velocity.Y + velYmult; // This line was wrong in the past. If you are using the tutorial and didn't read the description, change this line.
+                    projectile.velocity.Y = projectile.velocity.Y + velYmult;
                 }
 
                 projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(90f);
