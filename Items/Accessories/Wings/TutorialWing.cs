@@ -5,17 +5,16 @@ using Terraria.ModLoader;
 
 namespace TutorialMod.Items.Accessories.Wings
 {
+    [AutoloadEquip(EquipType.Wings)]
     public class TutorialWing : ModItem
     {
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
+        public override void SetStaticDefaults()
         {
-            equips.Add(EquipType.Wings);
-            return true;
+            DisplayName.SetDefault("Tutorial Wings");
         }
 
         public override void SetDefaults()
         {
-            item.name = "Tutorial Wings";
             item.width = 22;
             item.height = 22;
             item.value = 10000;
