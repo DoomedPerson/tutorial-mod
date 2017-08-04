@@ -17,7 +17,9 @@ namespace TutorialMod.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(200, 200, 200), "Tutorial Workbench");
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Tutorial Workbench");
+            AddMapEntry(new Color(200, 200, 200), name);
             adjTiles = new int[] { TileID.WorkBenches };
             disableSmartCursor = true;
         }
@@ -26,5 +28,6 @@ namespace TutorialMod.Tiles
         {
             Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("TutorialWorkbench"));
         }
+
     }
 }

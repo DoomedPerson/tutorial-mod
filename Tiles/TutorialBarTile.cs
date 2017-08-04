@@ -15,7 +15,12 @@ namespace TutorialMod.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1); // This tile will copy a 1 x 1 tile such as bars
             TileObjectData.addTile(Type);
             drop = mod.ItemType("TutorialBar"); // What item drops after destorying the tile
-            AddMapEntry(new Color(187, 78, 181), "Tutorial Bar"); // Colour of Tile on Map
+
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Tutorial Bar");
+
+            AddMapEntry(new Color(187, 78, 181), name); // Colour of Tile on Map
+
             minPick = 40; // What power pick minimum is needed to mine this block.
         }
     }

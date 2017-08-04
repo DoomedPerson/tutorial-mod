@@ -14,8 +14,11 @@ namespace TutorialMod.Tiles
             Main.tileMergeDirt[Type] = true; // Will tile merge with dirt?
             Main.tileLighted[Type] = true; // ???
             Main.tileBlockLight[Type] = true; // Emits Light
+            
             drop = mod.ItemType("TutorialOre"); // What item drops after destorying the tile
-            AddMapEntry(new Color(187, 78, 181), "Tutorial Ore"); // Colour of Tile on Map
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Tutorial Ore");
+            AddMapEntry(new Color(187, 78, 181), name); // Colour of Tile on Map
             minPick = 40; // What power pick minimum is needed to mine this block.
         }
 
