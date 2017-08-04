@@ -7,8 +7,10 @@ namespace TutorialMod.Buffs
     {
         public override void SetDefaults()
         {
-            Main.buffName[Type] = "Blocky";
-            Main.buffTip[Type] = "\"A Happy Pixel that follows you around!\"";
+            DisplayName.SetDefault("Blocky");
+            Description.SetDefault("\"A Happy Pixel that follows you around!\"");
+
+
             Main.buffNoTimeDisplay[Type] = true;
             Main.vanityPet[Type] = true;
         }
