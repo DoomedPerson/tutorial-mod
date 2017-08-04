@@ -1,19 +1,26 @@
+using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TutorialMod.Items
+namespace TutorialMod.Items.Weapons
 {
 	public class TutorialSword : ModItem
 	{
-		public override void SetDefaults()
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Sword");
+            Tooltip.SetDefault("This is a modded sword\nThis is the second tooltip.");
+        }
+
+        public override void SetDefaults()
 		{
-			item.name = "Tutorial Sword"; // Name of the Item
+			
 			item.damage = 20; // Base Damage of the Weapon
 			item.melee = true; // Weapon Class Type
 			item.width = 40; // Hitbox Width
 			item.height = 40; // Hitbox Height
-			item.toolTip = "This is a modded sword."; // First Tool Tip
-            item.toolTip2 = "This is a second toolTip."; // Second Tool Tip
 			item.useTime = 20; // Speed before reuse
 			item.useAnimation = 20; // Animation Speed
 			item.useStyle = 1; // 1 = Broadsword 
@@ -35,5 +42,13 @@ namespace TutorialMod.Items
             recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-	}
+
+        public override void MeleeEffects(Player player, Rectangle hitbox)
+        {
+            if(Main.rand.Next(3) == 0)
+            {
+                int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, mod.DustType("TutorialDust"));
+            }
+        }
+    }
 }

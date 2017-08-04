@@ -6,9 +6,15 @@ namespace TutorialMod.Items.Weapons
 {
     public class TutorialJavelin : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Javelin");
+
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Javelin";
+            
             item.thrown = true; // Set this to true if the weapon is throwable.
             item.maxStack = 999; // Makes it so the weapon stacks.
             item.damage = 50;

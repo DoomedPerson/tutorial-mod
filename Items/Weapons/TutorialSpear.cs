@@ -6,9 +6,14 @@ namespace TutorialMod.Items.Weapons
 {
     public class TutorialSpear : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Spear");
+
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Spear";
             item.damage = 40;
             item.useStyle = 5;
             item.useAnimation = 18;

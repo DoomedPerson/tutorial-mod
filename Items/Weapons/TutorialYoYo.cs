@@ -6,9 +6,14 @@ namespace TutorialMod.Items.Weapons
 {
     public class TutorialYoYo : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Yoyo");
+
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial YoYo";
             item.useStyle = 5; // The style used for YoYos.
             item.width = 24;
             item.height = 24;
