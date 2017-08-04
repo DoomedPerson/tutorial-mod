@@ -5,20 +5,19 @@ using System.Collections.Generic;
 
 namespace TutorialMod.Items.Armour
 {
+    [AutoloadEquip(EquipType.Legs)]
     public class TutorialLeggings : ModItem
     {
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
+        public override void SetStaticDefaults()
         {
-            equips.Add(EquipType.Legs);
-            return true;
+            DisplayName.SetDefault("Tutorial Leggings");
+            Tooltip.SetDefault("This is the Tutorial Leggings");
         }
 
         public override void SetDefaults()
         {
-            item.name = "Tutorial Leggings";
             item.width = 18;
             item.height = 18;
-            item.toolTip = "This is the Tutorial Leggings";
             item.value = 1000;
             item.rare = 2;
             item.defense = 10; // The Defence value for this piece of armour.

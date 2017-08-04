@@ -5,20 +5,19 @@ using System.Collections.Generic;
 
 namespace TutorialMod.Items.Armour
 {
+    [AutoloadEquip(EquipType.Head)]
     public class TutorialHelmet : ModItem
     {
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
+        public override void SetStaticDefaults()
         {
-            equips.Add(EquipType.Head);
-            return true;
+            DisplayName.SetDefault("Tutorial Helmet");
+            Tooltip.SetDefault("This is the Tutorial Helmet");
         }
 
         public override void SetDefaults()
         {
-            item.name = "Tutorial Helmet";
             item.width = 18;
             item.height = 18;
-            item.toolTip = "This is the Tutorial Helmet";
             item.value = 1000;
             item.rare = 2;
             item.defense = 10; // The Defence value for this piece of armour.

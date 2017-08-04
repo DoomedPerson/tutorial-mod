@@ -5,20 +5,24 @@ using System.Collections.Generic;
 
 namespace TutorialMod.Items.Armour
 {
+    // Added instread of AutoLoad
+    [AutoloadEquip(EquipType.Body)]
     public class TutorialBreastplate : ModItem
     {
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
+        public override void SetStaticDefaults()
         {
-            equips.Add(EquipType.Body);
-            return true;
+            DisplayName.SetDefault("Tutorial Breastplate"); // Set the name
+            Tooltip.SetDefault("This is the Tutorial Breastplate\nThis is the second line."); // Set the tooltop
         }
 
         public override void SetDefaults()
         {
+            /* Removed in 0.10
             item.name = "Tutorial Breastplate";
+            item.toolTip = "This is the Tutorial Breastplate";
+            */
             item.width = 18;
             item.height = 18;
-            item.toolTip = "This is the Tutorial Breastplate";
             item.value = 1000;
             item.rare = 2;
             item.defense = 12; // The Defence value for this piece of armour.
