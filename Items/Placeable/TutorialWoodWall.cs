@@ -6,9 +6,14 @@ namespace TutorialMod.Items.Placeable
 {
     public class TutorialWoodWall : ModItem
     {
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Wood Wall");
+        }
+        
         public override void SetDefaults()
         {
-            item.name = "Tutorial Wood Wall"; // Name of the Item
             item.width = 12; // Hitbox Width
             item.height = 12; // Hitbox Height
             item.useTime = 15; // Speed before reuse

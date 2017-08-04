@@ -6,9 +6,16 @@ namespace TutorialMod.Items.Placeable
 {
     public class TutorialWood : ModItem
     {
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Wood");
+        }
+
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Wood"; // Name of the Item
+            
             item.width = 12; // Hitbox Width
             item.height = 12; // Hitbox Height
             item.useTime = 15; // Speed before reuse
@@ -29,5 +36,7 @@ namespace TutorialMod.Items.Placeable
             r.SetResult(this); // 4 = number of this item you get.
             r.AddRecipe();
         }
+
+        
     }
 }

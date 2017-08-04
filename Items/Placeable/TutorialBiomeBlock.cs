@@ -6,9 +6,13 @@ namespace TutorialMod.Items.Placeable
 {
     public class TutorialBiomeBlock : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Biome Block");
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Biome Block"; 
             item.width = 12; 
             item.height = 12;
             item.useTime = 20; 

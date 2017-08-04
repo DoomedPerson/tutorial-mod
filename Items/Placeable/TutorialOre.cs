@@ -1,15 +1,20 @@
 ﻿using Terraria.ModLoader;
 using Terraria.ID;
+
 namespace TutorialMod.Items.Placeable
 {
     public class TutorialOre : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Ore");
+            Tooltip.SetDefault("This is a modded ore.");
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Ore"; // Name of the Item
             item.width = 12; // Hitbox Width
             item.height = 12; // Hitbox Height
-            item.toolTip = "This is a modded ore."; // First Tool Tip
             item.useTime = 20; // Speed before reuse
             item.useAnimation = 20; // Animation Speed
             item.useStyle = 1; // 1 = Broadsword 

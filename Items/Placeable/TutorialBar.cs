@@ -5,12 +5,16 @@ namespace TutorialMod.Items.Placeable
 {
     public class TutorialBar : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Bar");
+            Tooltip.SetDefault("This is a modded bar.");
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Bar"; // Name of the Item
             item.width = 24; // Hitbox Width
             item.height = 24; // Hitbox Height
-            item.toolTip = "This is a modded bar."; // First Tool Tip
             item.useTime = 20; // Speed before reuse
             item.useAnimation = 20; // Animation Speed
             item.useStyle = 1; // 1 = Broadsword 
