@@ -6,13 +6,19 @@ namespace TutorialMod.Items.Tools
 {
     public class TutorialHamaxe : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Hamaxe");
+            Tooltip.SetDefault("This is a modded Hamaxe.");
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Hamaxe"; // Name of the Item
+            
             item.damage = 13; // Base Damage of the Weapon
             item.width = 24; // Hitbox Width
             item.height = 24; // Hitbox Height
-            item.toolTip = "This is a modded Hammer."; // First Tool Tip
+            
             item.useTime = 16; // Speed before reuse
             item.useAnimation = 16; // Animation Speed
             item.useStyle = 1; // 1 = Broadsword 

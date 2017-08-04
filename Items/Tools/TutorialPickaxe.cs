@@ -6,13 +6,19 @@ namespace TutorialMod.Items.Tools
 {
     public class TutorialPickaxe : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tutorial Pickaxe");
+            Tooltip.SetDefault("This is a modded pickaxe.");
+        }
+
         public override void SetDefaults()
         {
-            item.name = "Tutorial Pickaxe"; // Name of the Item
+            
             item.damage = 15; // Base Damage of the Weapon
             item.width = 24; // Hitbox Width
             item.height = 24; // Hitbox Height
-            item.toolTip = "This is a modded Pickaxe."; // First Tool Tip
+            
             item.useTime = 20; // Speed before reuse
             item.useAnimation = 20; // Animation Speed
             item.useStyle = 1; // 1 = Broadsword 
