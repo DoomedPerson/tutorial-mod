@@ -43,32 +43,33 @@ namespace TutorialMod.Items.Weapons
 
         public override bool CanUseItem(Player player)
         {
-            if(player.altFunctionUse == 2)
+            if(player.altFunctionUse == 2) // Right Click function
             {
                 item.useTime = 20;
                 item.useAnimation = 20;
-                // Makes it so when you swing the weapon, you shoot a projectile.
-                item.shootSpeed = 16f;
+                // Right Click will shoot Snowballs
+                item.shootSpeed = 16f; 
                 item.shoot = ProjectileID.SnowBallFriendly;
-            } else
+            } else // Default Left Click
             {
                 item.useTime = 10;
                 item.useAnimation = 10;
-                item.damage = 2;
-                item.shoot = 0; // Doesn't shoot a projectile
+                // Left Click has no projectile
+                item.shootSpeed = 0f;
+                item.shoot = 0;
             }
             return base.CanUseItem(player);
         }
 
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            if(player.altFunctionUse == 2)
+            if(player.altFunctionUse == 2) // If the Right click function 
             {
-                target.AddBuff(BuffID.Ichor, 60);
-            } else
+                target.AddBuff(BuffID.Frostburn, 60);
+            } else // If Left Click Function 
             {
                 target.AddBuff(BuffID.OnFire, 60);
-            }
+            } 
         }
 
         public override void MeleeEffects(Player player, Rectangle hitbox)
