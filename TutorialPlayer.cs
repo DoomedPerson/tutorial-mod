@@ -10,12 +10,14 @@ namespace TutorialMod
     public class TutorialPlayer : ModPlayer
     {
         public bool tutorialPet = false;
+        public bool summonSpiritMinion = false;
 
         public bool zoneBiome = false;
 
         public override void ResetEffects()
         {
             tutorialPet = false;
+            summonSpiritMinion = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)
